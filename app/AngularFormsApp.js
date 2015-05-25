@@ -20,16 +20,16 @@ angularFormsApp.config(function ($routeProvider) {
         });
 });
 
-angularFormsApp.controller("HomeController", function ($scope, $location, $modal, DataService) {
+angularFormsApp.controller("HomeController", function ($scope, $location, DataService) {
 
     $scope.showCreateEmployeeForm = function () {
     
-        //$location.path('/newEmployeeForm');
+        $location.path('/newEmployeeForm');
 			
-    	$modal.open({
+    	/*$modal.open({
     			templateUrl: 'app/EmployeeForm/efTemplate.html',
     			controller:  'efController'
-    	});
+    	});*/
     };
 		
 	$scope.showUpdateEmployeeForm = function (id) {
