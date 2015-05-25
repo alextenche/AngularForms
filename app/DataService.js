@@ -1,12 +1,11 @@
 ﻿
-angularFormsApp.factory('DataService',
-    function () {
-		var getEmployee = function(id){
-			if(id == 123){
+angularFormsApp.factory('DataService', function () {
+	var getEmployee = function(id){
+		if(id == 456){
 				return {
-					id: 123,
+					id: 456,
 					fullName: "Alex Tenche",
-					notes: "The ideal employee.  Just don't touch his red stapler.",
+					notes: "The ideal employee.  Just don't ask him about bolsevics.",
 					department: "Administration",
 					dateHired: "July 11 2014",
 					perkCar: true,

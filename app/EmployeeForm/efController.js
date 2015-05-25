@@ -1,25 +1,24 @@
 ﻿
-angularFormsApp.controller('efController',
-    function efController($scope, $window, $routeParams, $modalInstance, DataService) {
+angularFormsApp.controller('efController', function efController($scope, $window, $routeParams, $modalInstance, DataService) {
 
-		if($routeParams.id){
-			$scope.employee = DataService.getEmployee($routeParams.id);
-		} else {
-			$scope.employee = { id: 0 };
-		}
-		
-		$scope.editableEmployee = angular.copy($scope.employee);
+	if($routeParams.id){
+		$scope.employee = DataService.getEmployee($routeParams.id);
+	} else {
+		$scope.employee = { id: 0 };
+	}
 
-        $scope.departments = [
-            "Engineering",
-            "Marketing",
-            "Finance",
-            "Administration"
-        ];
+	$scope.editableEmployee = angular.copy($scope.employee);
 
-        $scope.submitForm = function () {
-			
-			if($scope.editableEmployee.id == 0){
+	$scope.departments = [
+		"Engineering",
+		"Marketing",
+		"Finance",
+		"Administration"
+	];
+
+	$scope.submitForm = function () {
+
+		if($scope.editableEmployee.id == 0){
 				// insert new employee
 				DataService.insertEmployee($scope.editableEmployee);
 			} else {
@@ -31,12 +30,12 @@ angularFormsApp.controller('efController',
 			//$window.history.back();
 			
 			$modalInstance.close();
-        };
+		};
 		
 		$scope.cancelForm = function () {
 			//$window.history.back();
 			
 			$modalInstance.dismiss();
-        };
+		};
 
-    });
+	});
